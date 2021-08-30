@@ -1,0 +1,20 @@
+create 'pradar-whitelist',{METADATA => {'SPLIT_POLICY' => 'org.apache.hadoop.hbase.regionserver.KeyPrefixRegionSplitPolicy','KeyPrefixRegionSplitPolicy.prefix_length' => 2}},{ NAME => 'cf', TTL => 604800, COMPRESSION => 'SNAPPY',BLOOMFILTER => 'ROW', VERSIONS => 5, DATA_BLOCK_ENCODING => 'PREFIX' }
+
+create 'trace-entry',{METADATA => {'SPLIT_POLICY' => 'org.apache.hadoop.hbase.regionserver.DelimitedKeyPrefixRegionSplitPolicy','DelimitedKeyPrefixRegionSplitPolicy.delimiter' => '|'}},{ NAME => 'cf', TTL => 604800, COMPRESSION => 'SNAPPY',BLOOMFILTER => 'ROW', VERSIONS => 5, DATA_BLOCK_ENCODING => 'PREFIX' }
+
+create 'pradar-log', {METADATA => {'SPLIT_POLICY' => 'org.apache.hadoop.hbase.regionserver.KeyPrefixRegionSplitPolicy','KeyPrefixRegionSplitPolicy.prefix_length' => 5}},{ NAME => 'cf', TTL => 604800, COMPRESSION => 'SNAPPY', VERSIONS => 24, DATA_BLOCK_ENCODING => 'PREFIX'}
+
+create 'pradar-link-queue', {METADATA => {'SPLIT_POLICY' => 'org.apache.hadoop.hbase.regionserver.KeyPrefixRegionSplitPolicy','KeyPrefixRegionSplitPolicy.prefix_length' => 5}},{ NAME => 'cf', TTL => 300, COMPRESSION => 'SNAPPY', VERSIONS => 1, DATA_BLOCK_ENCODING => 'PREFIX'}
+
+create 'pradar-link-config', { NAME => 'node', TTL => 2592000, COMPRESSION => 'SNAPPY', VERSIONS => 1, DATA_BLOCK_ENCODING => 'PREFIX'}, { NAME => 'eagle', TTL => 2592000, COMPRESSION => 'SNAPPY', VERSIONS => 1, DATA_BLOCK_ENCODING => 'PREFIX'}
+
+create 'pradar-linkid-config', { NAME => 'cf', TTL => 2592000, COMPRESSION => 'SNAPPY', VERSIONS => 1, DATA_BLOCK_ENCODING => 'PREFIX'}
+
+create 'pradar-slow-sql', { NAME => 'f0', TTL => 259200, COMPRESSION => 'SNAPPY', VERSIONS => 1, DATA_BLOCK_ENCODING => 'PREFIX'}
+
+list
+
+
+
+
+
